@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bindu Hosea Marbun</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+    <div class="logo">Bindu | Portfolio</div>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div class="hero-left">
+        <h1>Hi, <span id="typing"></span></h1>
+        <h3>Informatics Engineering Student</h3>
+        <p>
+            Passionate about programming, system fundamentals,
+            and Artificial Intelligence.
+        </p>
+    </div>
+</section>
+
+<section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+        I am an Undergraduate Student in Informatics Engineering at Pamulang University
+        with a stong interest in both current and emerging technologies.
+        currently, i am building a solid foundation in programming fundamentals and computer 
+        systems while continuously improving my technical skills in c++ adn python. 
+        I am particulary interested in Artificial Intelligence (AI), and it's potential to shape 
+        the future of technology.
+        I believe that the rapid evolution of technology requires consistency, strong curiosity, 
+        and high digital literacy. Driven by a deep eagerness to learn, I am committed to growing step bye step
+        throught self-directed learning and small practical project to strengthen both my technical
+        and problem-solving mindset
+    </p>
+</section>
+
+<section id="project" class="section">
+    <h2>Academic Project</h2>
+
+    <div class="project-card">
+
+        <div class="project-gallery">
+            <img src="Image/Untitled Diagram-Page-3.drawio (1).png" alt="Flowchart" onclick="openModal(this.src)">
+            <img src="image/fixx kali.png" alt="Code" onclick="openModal(this.src)">
+            <img src="image/Screenshot 2025-12-19 120428.png" alt="Result" onclick="openModal(this.src)">
+        </div>
+
+        <div class="project-content">
+            <h3>Sistem Pembelian Tiket (C++)</h3>
+            <p>
+                Project ini dibuat sebagai tugas akhir mata kuliah pemrograman.
+                Sistem berbasis terminal menggunakan C++.
+            </p>
+
+            <h4>Fokus Pembelajaran:</h4>
+            <ul>
+                <li>Struktur data sederhana</li>
+                <li>Percabangan & perulangan</li>
+                <li>Kerja tim</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <h2>Contact</h2>
+    <div class="contact-container">
+        <p>Email: <a href="mailto:binduhose@gmail.com" class="contact-link">binduhose@gmail.com</a></p>
+        <p>LinkedIn: 
+            <a href="https://www.linkedin.com/in/binduu-hosea-612b3738b" target="_blank" rel="noopener noreferrer" class="contact-link">
+                Bindu Hosea Marbun
+            </a>
+        </p>
+    </div>
+</section>
+
+<!-- Modal -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <img id="modalImg">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

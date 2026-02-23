@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0b0f19;
+    color: #e6edf3;
+    scroll-behavior: smooth;
+}
+
+/* BACKGROUND GLOW */
+body::before {
+    content: "";
+    position: fixed;
+    top: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(124,58,237,0.4), transparent 70%);
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    bottom: -200px;
+    left: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0,191,255,0.3), transparent 70%);
+    z-index: -1;
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+nav.scrolled {
+    background: rgba(10, 15, 25, 0.8);
+    backdrop-filter: blur(12px);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #e6edf3;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #a855f7;
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 8%;
+}
+
+.hero h1 {
+    font-size: 70px;
+    font-weight: 700;
+}
+
+.hero span {
+    color: #a855f7;
+    text-shadow: 0 0 20px rgba(168,85,247,0.6);
+}
+
+.hero h3 {
+    margin: 20px 0;
+    font-size: 22px;
+    color: #94a3b8;
+}
+
+.hero p {
+    max-width: 500px;
+    line-height: 1.6;
+    color: #94a3b8;
+}
+
+/* SECTION */
+.section {
+    padding: 140px 8%;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+/* PROJECT CARD PREMIUM */
+.project-card {
+    background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.4);
+    transition: 0.4s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 60px rgba(168,85,247,0.3);
+}
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.project-gallery img {
+    width: 100%;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.project-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(168,85,247,0.5);
+}
+
+.project-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.project-content ul {
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #94a3b8;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    max-width: 85%;
+    max-height: 85%;
+    border-radius: 12px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .section {
+        padding: 100px 6%;
+    }
+}
+
+/* --- Tambahan untuk Link Kontak --- */
+
+.section p {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #94a3b8;
+}
+
+/* Styling Link LinkedIn & Email */
+.section p a {
+    color: #a855f7; /* Warna ungu sesuai tema Hero */
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
+    display: inline-block;
+}
+
+/* Efek Glow & Warna saat Kursor Diatasnya */
+.section p a:hover {
+    color: #e6edf3;
+    text-shadow: 0 0 10px rgba(168,85,247,0.8);
+    transform: translateY(-2px); /* Sedikit naik ke atas */
+}
+
+/* Garis bawah animasi */
+.section p a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #a855f7;
+    transition: width 0.3s ease;
+}
+
+.section p a:hover::after {
+    width: 100%;
+}
