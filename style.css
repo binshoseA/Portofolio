@@ -117,6 +117,68 @@ nav a:hover {
     margin-bottom: 30px;
 }
 
+/* EDUCATION & EXPERIENCE STYLING */
+.education-container, .experience-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.edu-card, .exp-card {
+    background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    transition: 0.3s;
+}
+
+.edu-card img, .exp-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 5px;
+}
+
+.edu-info h3, .exp-card h3 {
+    color: #e6edf3;
+    font-size: 20px;
+}
+
+.year, .org-name {
+    color: #a855f7;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.exp-card {
+    flex-direction: column;
+    text-align: center;
+}
+
+.edu-card:hover, .exp-card:hover {
+    border-color: #a855f7;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+}
+
+@media(max-width: 600px) {
+    .edu-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
 /* PROJECT CARD PREMIUM */
 .project-card {
     background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
